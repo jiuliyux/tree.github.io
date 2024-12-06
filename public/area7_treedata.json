@@ -1,0 +1,84 @@
+[
+  {
+    "id": 4038,
+    "x": 281,
+    "y": 231,
+    "height": 6.464,
+    "diameter": 0.314,
+    "carbonStorage": 161.057,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4041,
+    "x": 384,
+    "y": 256,
+    "height": 5.657,
+    "diameter": 0.216,
+    "carbonStorage": 145.297,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4054,
+    "x": 483,
+    "y": 283,
+    "height": 6.519,
+    "diameter": 0.395,
+    "carbonStorage": 175.962,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4069,
+    "x": 604,
+    "y": 159,
+    "height": 7.719,
+    "diameter": 0.239,
+    "carbonStorage": 152.631,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4084,
+    "x": 588,
+    "y": 298,
+    "height": 5.326,
+    "diameter": 0.25,
+    "carbonStorage": 148.169,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4085,
+    "x": 702,
+    "y": 171,
+    "height": 5.262,
+    "diameter": 0.254,
+    "carbonStorage": 148.443,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4091,
+    "x": 776,
+    "y": 190,
+    "height": 10.707,
+    "diameter": 0.212,
+    "carbonStorage": 65.732,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4099,
+    "x": 793,
+    "y": 350,
+    "height": 5.075,
+    "diameter": 0.317,
+    "carbonStorage": 155.462,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4100,
+    "x": 899,
+    "y": 212,
+    "height": 4.717,
+    "diameter": 0.356,
+    "carbonStorage": 159.046,
+	"treeSpecies": "榕树"
+  }
+]
+

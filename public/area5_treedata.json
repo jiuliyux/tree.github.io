@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1013,
+    "x": 552,
+    "y": 319,
+    "height":7.478,
+    "diameter": 0.443,
+    "carbonStorage": 64.99,
+	"treeSpecies": "银海枣"
+  },
+  {
+    "id": 1053,
+    "x": 680,
+    "y": 312,
+    "height": 6.75,
+    "diameter": 0.358,
+    "carbonStorage": 47.91,
+	"treeSpecies": "银海枣"
+  },
+  {
+    "id": 1055,
+    "x": 776,
+    "y": 319,
+    "height": 6.743,
+    "diameter": 0.329,
+    "carbonStorage": 43.44,
+	"treeSpecies": "银海枣"
+  },
+  {
+    "id": 1066,
+    "x": 888,
+    "y": 321,
+    "height": 7.103,
+    "diameter": 0.361,
+    "carbonStorage": 49.82,
+	"treeSpecies": "银海枣"
+  },
+  {
+    "id": 1078,
+    "x": 965,
+    "y": 321,
+    "height": 6.515,
+    "diameter": 0.397,
+    "carbonStorage": 52.89,
+	"treeSpecies": "银海枣"
+  }
+]

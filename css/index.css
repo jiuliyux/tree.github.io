@@ -1,0 +1,154 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+html,body{
+	width: 100%;
+	height: 100%;
+}
+
+.warp{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(#095c88,#010b10);
+	/* top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: -1; */
+}
+
+.main{
+	width: 1920px;
+	height: 860px;
+	overflow: hidden;
+	background: url('../image/1.png');
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.title{
+	font-size: 28px;
+	color: #444;
+	width: 100%;
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+	background: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-weight: bold;
+	letter-spacing: 5px;
+}
+
+.drop{
+	width: 20px;
+	height: 20px;
+	background: red;
+	position: absolute;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.tip{
+	padding: 5px 10px;
+	background: #202124;
+	color: #fff;
+	font-size: 12px;
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 10px;
+}
+
+.el-dialog__wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.el-dialog{
+	width: 1600px !important;
+	min-height: 600px !important;
+	margin: 0 auto !important;
+}
+
+/* 弹窗右侧显示详细信息 */
+.mypop .el-dialog__body {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;  /* 给弹窗添加内边距 */
+	font-weight: bold;  /* 标签加粗 */
+}
+
+/* 调整弹窗内容区域的内边距 */
+.mypop .el-dialog__body {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;  /* 减小左右内边距 */
+}
+
+/* 调整右侧详细信息区域与左侧的间距 */
+.mypop .el-dialog__body .details {
+    flex: 1;
+    margin-left: 10px;  /* 减小右侧信息区域与左侧内容的间距 */
+    font-size: 20px;  /* 可以稍微减小字体大小，避免占用太多空间 */
+}
+
+/* 详细信息项之间的间隔 */
+.mypop .el-descriptions-item {
+    font-size: 20px;  /* 调整字体大小 */
+    margin-bottom: 12px;  /* 调整每项之间的间隔 */
+}
+
+/* 弹窗总宽度调整 */
+.mypop .el-dialog {
+    width: 1200px !important;  /* 可以适当减小弹窗宽度 */
+    margin: 0 auto !important;
+}
+/* 新增的碳储量提示信息样式 */
+.mypop.carbon-tip {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px; /* 增加与上面内容的间隔 */
+}
+
+
+.region{
+	position: relative;
+}
+
+.region img{
+	width: 100%;
+}
+
+.el-dialog__header{
+	padding: 0 !important;
+}
+
+.el-dialog__headerbtn{
+	top: 10px !important;
+	right: 10px !important;
+}
+
+.treeDrop{
+	width: 10px;
+	height: 10px;
+	background: red;
+	position: absolute;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.pop{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 99999;
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "id": 5013,
+    "x": 1000,
+    "y": 184,
+    "height": 8.319,
+    "diameter": 0.214,
+    "carbonStorage": 66.300,
+	"treeSpecies": "红花羊蹄甲"
+  },
+  {
+    "id": 5014,
+    "x": 765,
+    "y": 634,
+    "height": 11.323,
+    "diameter": 0.239,
+    "carbonStorage": 85.549,
+	"treeSpecies": "红花羊蹄甲"
+  },
+  {
+    "id": 5021,
+    "x": 386,
+    "y": 600,
+    "height": 9.227,
+    "diameter": 0.162,
+    "carbonStorage": 34.88,
+	"treeSpecies": "红花羊蹄甲"
+  },
+  {
+    "id": 5026,
+    "x": 50,
+    "y": 558,
+    "height": 8.995,
+    "diameter": 0.222,
+    "carbonStorage": 72.169,
+	"treeSpecies": "红花羊蹄甲"
+  },
+  {
+    "id": 5030,
+    "x": 171,
+    "y": 597,
+    "height": 9.51,
+    "diameter": 0.311,
+    "carbonStorage": 157.055,
+	"treeSpecies": "红花羊蹄甲"
+  },
+  {
+    "id": 6005,
+    "x": 543,
+    "y": 201,
+    "height": 10.533,
+    "diameter": 0.18,
+    "carbonStorage": 45.064,
+	"treeSpecies": "凤凰木"
+  },
+  {
+    "id": 6006,
+    "x": 911,
+    "y": 523,
+    "height": 10.707,
+    "diameter": 0.212,
+    "carbonStorage": 65.732,
+	"treeSpecies": "凤凰木"
+  },
+  {
+    "id": 6014,
+    "x": 891,
+    "y": 657,
+    "height": 10.996,
+    "diameter": 0.213,
+    "carbonStorage": 66.033,
+	"treeSpecies": "凤凰木"
+  },
+  {
+    "id": 6015,
+    "x": 1084,
+    "y": 709,
+    "height": 11.712,
+    "diameter": 0.206,
+    "carbonStorage": 61.519,
+	"treeSpecies": "凤凰木"
+  },
+  {
+    "id": 8002,
+    "x": 594,
+    "y": 601,
+    "height": 10.8,
+    "diameter": 0.4,
+    "carbonStorage": 47.79,
+	"treeSpecies": "白玉兰"
+  },
+  {
+    "id": 8017,
+    "x": 1005,
+    "y": 351,
+    "height": 9.587,
+    "diameter": 0.177,
+    "carbonStorage": 17.617,
+	"treeSpecies": "白玉兰"
+  },
+  {
+    "id": 8018,
+    "x": 829,
+    "y": 490,
+    "height": 8.806,
+    "diameter": 0.156,
+    "carbonStorage": 15.094,
+	"treeSpecies": "白玉兰"
+  },
+  {
+    "id": 8019,
+    "x": 600,
+    "y": 100,
+    "height": 9.829,
+    "diameter": 0.217,
+    "carbonStorage": 22.607,
+	"treeSpecies": "白玉兰"
+  },
+  {
+    "id": 8026,
+    "x": 107,
+    "y": 357,
+    "height": 10.223,
+    "diameter": 0.245,
+    "carbonStorage": 26.228,
+	"treeSpecies": "白玉兰"
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "id": 4038,
+    "x": 670,
+    "y": 555,
+    "height": 6.464,
+    "diameter": 0.314,
+    "carbonStorage": 161.057,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4041,
+    "x": 774,
+    "y": 556,
+    "height": 5.657,
+    "diameter": 0.216,
+    "carbonStorage": 145.297,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4054,
+    "x": 828,
+    "y": 554,
+    "height": 6.519,
+    "diameter": 0.395,
+    "carbonStorage": 175.962,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4069,
+    "x": 881,
+    "y": 558,
+    "height": 7.719,
+    "diameter": 0.239,
+    "carbonStorage": 152.631,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4084,
+    "x": 926,
+    "y": 566,
+    "height": 5.326,
+    "diameter": 0.25,
+    "carbonStorage": 148.169,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4085,
+    "x": 985,
+    "y": 567,
+    "height": 5.262,
+    "diameter": 0.254,
+    "carbonStorage": 148.443,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4091,
+    "x": 1072,
+    "y": 569,
+    "height": 10.707,
+    "diameter": 0.212,
+    "carbonStorage": 65.732,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4099,
+    "x": 1138,
+    "y": 582,
+    "height": 5.075,
+    "diameter": 0.317,
+    "carbonStorage": 155.462,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 4100,
+    "x": 1190,
+    "y": 581,
+    "height": 4.717,
+    "diameter": 0.356,
+    "carbonStorage": 159.046,
+	"treeSpecies": "榕树"
+  },
+  {
+    "id": 7001,
+    "x": 1038,
+    "y": 172,
+    "height": 10.117,
+    "diameter": 0.228,
+    "carbonStorage": 81.612,
+	"treeSpecies": "异木棉"
+  },
+  {
+    "id": 7002,
+    "x": 923,
+    "y": 123,
+    "height": 9.155,
+    "diameter": 0.217,
+    "carbonStorage": 69.559,
+	"treeSpecies": "异木棉"
+  },
+  {
+    "id": 7005,
+    "x": 1005,
+    "y": 108,
+    "height": 13.217,
+    "diameter": 0.342,
+    "carbonStorage": 194.778,
+	"treeSpecies": "异木棉"
+  },
+  {
+    "id": 7007,
+    "x": 772,
+    "y": 148,
+    "height": 10.048,
+    "diameter": 0.276,
+    "carbonStorage": 110.402,
+	"treeSpecies": "异木棉"
+  },
+  {
+    "id": 7008,
+    "x": 956,
+    "y": 158,
+    "height": 9.365,
+    "diameter": 0.203,
+    "carbonStorage": 63.642,
+	"treeSpecies": "异木棉"
+  }
+]

@@ -1,0 +1,127 @@
+[{
+  "id": 2018,
+  "x": 556,
+  "y": 292,
+  "height": 7.478,
+  "diameter": 0.443,
+  "carbonStorage": 64.99,
+  "treeSpecies": "大王椰"
+},
+  {
+    "id": 2022,
+    "x": 588,
+    "y": 367,
+    "height": 6.75,
+    "diameter": 0.358,
+    "carbonStorage": 47.91,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2024,
+    "x": 679,
+    "y": 166,
+    "height": 6.743,
+    "diameter": 0.329,
+    "carbonStorage": 43.44,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2066,
+    "x": 674,
+    "y": 234,
+    "height": 7.103,
+    "diameter": 0.361,
+    "carbonStorage": 49.82,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2088,
+    "x": 768,
+    "y": 240,
+    "height": 6.515,
+    "diameter": 0.397,
+    "carbonStorage": 52.89,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2113,
+    "x": 827,
+    "y": 247,
+    "height": 13.735,
+    "diameter": 0.456,
+    "carbonStorage": 99.498,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2118,
+    "x": 856,
+    "y": 221,
+    "height": 15.296,
+    "diameter": 0.406,
+    "carbonStorage": 98.797,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2121,
+    "x": 976,
+    "y": 216,
+    "height": 11.872,
+    "diameter": 0.441,
+    "carbonStorage": 85.715,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2140,
+    "x": 1014,
+    "y": 218,
+    "height": 13.175,
+    "diameter": 0.304,
+    "carbonStorage": 68.59,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2162,
+    "x": 1035,
+    "y": 278,
+    "height": 14.27,
+    "diameter": 0.362,
+    "carbonStorage": 84.76,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2176,
+    "x": 1000,
+    "y": 334,
+    "height": 13.41,
+    "diameter": 0.326,
+    "carbonStorage": 73.773,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2193,
+    "x": 1092,
+    "y": 224,
+    "height": 11.863,
+    "diameter": 0.308,
+    "carbonStorage": 63.546,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2194,
+    "x": 1175,
+    "y": 340,
+    "height": 13.569,
+    "diameter": 0.358,
+    "carbonStorage": 80.536,
+	"treeSpecies": "大王椰"
+  },
+  {
+    "id": 2196,
+    "x": 1211,
+    "y": 282,
+    "height": 10.427,
+    "diameter": 0.324,
+    "carbonStorage": 59.533,
+	"treeSpecies": "大王椰"
+  }
+]

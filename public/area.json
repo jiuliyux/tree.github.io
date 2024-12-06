@@ -1,0 +1,44 @@
+{
+	"area1": {
+		"representativePoint": {
+			"x": 1563,
+			"y": 288
+		}
+	},
+	"area2": {
+		"representativePoint": {
+			"x": 1353,
+			"y": 490
+		}
+	},
+	"area3": {
+		"representativePoint": {
+			"x": 1234,
+			"y": 296
+		}
+	},
+	"area4": {
+		"representativePoint": {
+			"x": 1001,
+			"y": 184
+		}
+	},
+	"area5": {
+		"representativePoint": {
+			"x": 535,
+			"y": 386
+		}
+	},
+	"area6": {
+		"representativePoint": {
+			"x": 1127,
+			"y": 638
+		}
+	},
+	"area7": {
+		"representativePoint": {
+			"x": 1291,
+			"y": 360
+		}
+	}
+}

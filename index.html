@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>树种分类与树木信息可视化系统</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<script src="js/vue-2.4.0.js"></script>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script type="importmap">
+		    {
+				"imports": {
+					"three": "./three/build/three.module.js"
+				}
+			}
+		</script>
+
+		<script>
+			function htmlSize() {
+			  let llqnw = window.innerWidth;
+			  let llqnh = window.innerHeight;
+			  let sca = llqnw / 1920;
+			  document.documentElement.style.zoom = sca;
+			  // document.getElementById('#app').style.zoom = sca
+			
+			  var obj = {
+			    zoom: 1 / sca,
+			    transform: 'scale(' + sca + ')',	
+			    transformOrigin: '0 0'
+			  };
+			
+			  insertCss('canvas', obj);
+			}
+			
+			function insertCss(select, styles) {
+			  var styleSheets = document.styleSheets[document.styleSheets.length - 1];
+			  var str = select + ' {';
+			
+			  for (var prop in styles) {
+			    str += prop.replace(/([A-Z])/g, function (item) {
+			      return "-" + item.toLowerCase();
+			    }) + ":" + styles[prop] + ";";
+			  }
+			
+			  str += "}";
+			
+			  if (document.styleSheets.length === 0) {
+			    var style = document.createElement('style');
+			    document.head.appendChild(style);
+			    styleSheets = style.sheet;
+			  }
+			
+			  // styleSheets.insertRule(str, styleSheets.cssRules.length);
+			}
+			
+			window.addEventListener('resize', function () {
+			  htmlSize();
+			});
+			
+			htmlSize(); 
+		</script>
+	</head>
+	<body>
+		<div id="app" class="warp">
+			<div class="title">树种分类与树木信息可视化系统</div>
+			<div style="height: 40px;"></div>
+			<div class="main">
+				<!-- 区域点信息start -->
+				<div class="drop" @click="openRegion(item,index)" v-for="(item,index) in dropData" :key="index" :style="'left:'+item.representativePoint.x+'px;top:'+item.representativePoint.y+'px'">
+					<el-tooltip class="item" effect="dark" :content="item.name" placement="top">
+						<div style="width: 100%;height: 100%;"></div>
+					</el-tooltip>
+				</div>
+				<!-- 区域点信息end -->
+			</div>
+			
+			<el-dialog :visible.sync="dialogVisible">
+				<div class="region">
+					<img v-show="areaClass == 'area1'" src="image/area1.png" alt="" />
+					<img v-show="areaClass == 'area2'" src="image/area2.png" alt="" />
+					<img v-show="areaClass == 'area3'" src="image/area3.png" alt="" />
+					<img v-show="areaClass == 'area4'" src="image/area4.png" alt="" />
+					<img v-show="areaClass == 'area5'" src="image/area5.png" alt="" />
+					<img v-show="areaClass == 'area6'" src="image/area6.png" alt="" />
+					<img v-show="areaClass == 'area7'" src="image/area7.png" alt="" />
+					
+					<div class="treeDrop" @click="openTree(item,index)" v-for="(item,index) in TreeData" :key="index" :style="'left:'+item.x+'px;top:'+item.y+'px'">
+					</div>
+				</div>
+			</el-dialog>
+			
+			
+			<el-dialog :visible.sync="pop" class="mypop" :before-close="handleClose">
+			    <div id="pop"></div>
+			    <div class="details">
+			        <el-descriptions title="详细信息">
+			            <el-descriptions-item label="树高">{{ details?.height }}</el-descriptions-item>
+			            <el-descriptions-item label="胸径">{{ details?.diameter }}</el-descriptions-item>
+			            <el-descriptions-item label="碳储存量">{{ details?.carbonStorage }}</el-descriptions-item>
+			            <el-descriptions-item label="树种">{{ details?.treeSpecies }}</el-descriptions-item>
+			        </el-descriptions>
+					
+			        <div class="carbon-tip">
+			            此单木碳储量为{{ details?.carbonStorage }}kg，一张A4纸的生产约排放8g二氧化碳，这棵树约是{{ Math.round(details?.carbonStorage / 0.008) }}张A4纸存在于你面前
+			        </div>
+			    </div>
+			</el-dialog>
+		</div>
+	</body>
+	<script  type="module">
+		import * as THREE from 'three'
+		import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js'
+				
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				// 获取到的区域位置信息
+				dropData:[],
+				isShow:'',
+				dialogVisible:false,
+				imgurl:'',
+				areaClass:'',
+				TreeData:[] ,// 树打点集合
+				scene:null,
+				camera:null,
+				rotationAngle:0,
+				pop:false,
+				details:null
+			},
+			created() {
+				this.getMapJson()
+			},
+			methods:{
+				// 获取地图上区域数据
+				getMapJson(){
+					let that = this
+					fetch('./public/area.json').then(function(response) {
+					    return response.json();
+					}).then(function(data) {
+						const keys = Object.keys(data);
+						that.dropData = Object.values(data).map((res,index)=>{
+							return {
+								...res,
+								name:keys[index]
+							}
+						})
+					}).catch(function(error) {
+					    console.log(error);
+					});
+				},
+				// 点击区域点弹出
+				openRegion(e,i){
+					this.dialogVisible = true
+					this.areaClass = 'area'+(i+1)
+					let that = this
+					let jsonUrl = `./public/area${ i+1 }_treedata.json`
+					fetch(jsonUrl).then(function(response) {
+					    return response.json();
+					}).then(function(data) {
+						that.TreeData = data
+					}).catch(function(error) {
+						that.TreeData = []
+					    console.log(error);
+					});
+				},
+				// 点击树触发
+				openTree(e, i) {
+				    this.pop = true;
+				    console.log(e);
+				    this.details = e; // details 接收到包括树种的完整数据
+				    setTimeout(res => {
+				        this.openPoint(e.id);
+				    }, 100);
+				},
+
+				openPoint(id){
+					// 创建场景、相机和渲染器
+					let that = this
+					this.scene = new THREE.Scene();
+					this.camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+					this.renderer = new THREE.WebGLRenderer();
+					this.renderer.setSize(600, 600);
+					document.getElementById('pop').appendChild(this.renderer.domElement);	
+					
+					this.scene.background = new THREE.Color("#074c71");
+					
+					// const geometry = new THREE.BoxGeometry();
+					// const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+					// const cube = new THREE.Mesh(geometry, material);
+					// this.scene.add(cube)
+
+					// 加载点云数据
+					var loader = new THREE.FileLoader();
+					loader.load(`./public/trees/${ id }.txt`, function(data) {
+					    var points = [];
+					    var lines = data.split('\n');
+					    lines.forEach(function(line) {
+					        var values = line.trim().split(' ');
+					        if (values.length >= 3) {
+					            var x = parseFloat(values[0]);
+					            var y = parseFloat(values[1]);
+					            var z = parseFloat(values[2]);
+					            // points.push(new THREE.Vector3(x, y, z));
+								points.push(new THREE.Vector3(y,z,x));
+					        }
+					    });
+					
+					    // 创建点云几何体和材质
+					    var geometry = new THREE.BufferGeometry().setFromPoints(points);
+					    var material = new THREE.PointsMaterial({
+							color: 0xeddfd2,     // 点的颜色
+							size: 0.01,          // 点的大小（像素）
+							map: null,           // 点的纹理贴图
+							sizeAttenuation: true, // 是否根据距离衰减点的大小
+							transparent: false,  // 材质是否透明
+							opacity: 1,          // 透明度（0到1之间）
+							blending: THREE.NormalBlending, // 混合模式
+							depthTest: true,     // 是否进行深度测试
+							depthWrite: true,    // 是否写入深度缓冲区
+							polygonOffset: false, // 是否启用多边形偏移，以避免深度冲突
+							polygonOffsetFactor: 1, // 多边形偏移因子
+							polygonOffsetUnits: 0,  // 多边形偏移单位
+							alphaTest: 0,        // 透明度测试阈值
+							visible: true        // 材质是否可见
+						});
+					    var pointCloud = new THREE.Points(geometry, material);
+					
+					    // 将点云添加到场景中
+					    that.scene.add(pointCloud);
+						
+						
+						// 把模型调整到中心点 start
+						const box = new THREE.Box3().setFromObject(pointCloud);
+						const center = new THREE.Vector3();
+						box.getCenter(center);
+						pointCloud.position.sub(center);
+						// 把模型调整到中心点 end
+					
+					    // 设置相机位置
+					    that.camera.position.z = 10;
+						
+						// 添加轨道控制器
+						var controls = new OrbitControls(that.camera, that.renderer.domElement);
+						// controls.enableDamping = true; // 添加阻尼效果，使旋转更平滑
+						// controls.dampingFactor = 0.25; // 阻尼系数
+					
+					    // 渲染循环
+					    that.animate();
+					}, undefined, function(error) {
+					    console.error('Error loading point cloud data:', error);
+					});
+				},
+				animate() {
+				    requestAnimationFrame(this.animate);
+					
+					// 更新轨道控制器
+					var controls = this.scene.userData.controls;
+					if (controls) controls.update();
+					
+				    this.renderer.render(this.scene, this.camera);
+				},
+				handleClose(done){
+					document.getElementById("pop").innerHTML = "";
+					done()
+				}
+			}
+		})
+	</script>
+</html>
